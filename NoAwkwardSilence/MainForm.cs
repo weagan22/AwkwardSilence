@@ -107,9 +107,10 @@ namespace NoAwkwardSilence
             if (audio_.IsAwkward(defaultSession_, toleranceTrackBar.Value))
             {
                 logTextBox.Text = "Audio: None " + Environment.NewLine + "Sound source: Queued\n";
-                if (awkwardMeter_ > delayTrackBar.Value)
+                if (awkwardMeter_ > delayTrackBar.Value*4)
                 {
                     logTextBox.Text = "Audio: None" + Environment.NewLine + "Sound source: ON\n";
+                    notifyIcon1.Text = "No Awkward Silence - (ON)";
                     if (muteRadio.Checked)
                     {
                         audio_.Mute(defaultSession_, false);
@@ -117,6 +118,7 @@ namespace NoAwkwardSilence
                         {
                             audio_.TogglePause(defaultSession_);
                         }
+                        
                     }
                     else if (!audio_.SessionPlaying(defaultSession_))
                     {
@@ -130,6 +132,7 @@ namespace NoAwkwardSilence
             else
             {
                 logTextBox.Text = "Audio: Detected" + Environment.NewLine + "Sound source: OFF\n";
+                notifyIcon1.Text = "No Awkward Silence - (OFF)";
                 if (muteRadio.Checked)
                 {
                     audio_.Mute(defaultSession_, true);
