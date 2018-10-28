@@ -28,6 +28,7 @@ namespace NoAwkwardSilence
             toleranceTrackBar.Value = Properties.Settings.Default.Tolerance;
             muteRadio.Checked = Properties.Settings.Default.Mode;
             playRadio.Checked = !Properties.Settings.Default.Mode;
+            chkMuteAds.Checked = Properties.Settings.Default.Mute;
             updateBtn_Click(null, EventArgs.Empty);
         }
 
@@ -112,6 +113,26 @@ namespace NoAwkwardSilence
         // Check for sound changes every second
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if (chkMuteAds.Checked)
+            {
+                Process[] spotifyProcessX;
+                spotifyProcessX = Process.GetProcessesByName("Spotify");
+
+                for (int i = 0; (i < spotifyProcessX.Length); i++)
+                {
+                    if (spotifyProcessX[i].MainWindowTitle.Length > 0)
+                    {
+                        int test1 = spotifyProcessX[i].MainWindowTitle.IndexOf("-");
+                        if (spotifyProcessX[i].MainWindowTitle.IndexOf("-") == -1)
+                        {
+                            audio_.Mute(defaultSession_, true);
+                        }
+
+                    }
+
+                }
+            }
+
             if (audio_.IsAwkward(defaultSession_, toleranceTrackBar.Value))
             {
                
@@ -152,7 +173,8 @@ namespace NoAwkwardSilence
                 }
                 awkwardMeter_ = 0;
             }
-        }
+
+                    }
 
 
         // Save settings as form closes
@@ -162,6 +184,7 @@ namespace NoAwkwardSilence
             Properties.Settings.Default.Delay = delayTrackBar.Value;
             Properties.Settings.Default.Tolerance = toleranceTrackBar.Value;
             Properties.Settings.Default.Mode = muteRadio.Checked;
+            Properties.Settings.Default.Mute = chkMuteAds.Checked;
             Properties.Settings.Default.Save();
         }
 

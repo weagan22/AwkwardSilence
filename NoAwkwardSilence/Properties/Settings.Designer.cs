@@ -58,5 +58,17 @@ namespace NoAwkwardSilence.Properties {
                 this["Mode"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool Mute {
+            get {
+                return ((bool)(this["Mute"]));
+            }
+            set {
+                this["Mute"] = value;
+            }
+        }
     }
 }

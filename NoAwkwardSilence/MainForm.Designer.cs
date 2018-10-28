@@ -54,6 +54,7 @@
             this.startStopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.chkMuteAds = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.delayTrackBar)).BeginInit();
@@ -92,14 +93,16 @@
             // 
             // tableLayoutPanel4
             // 
-            this.tableLayoutPanel4.ColumnCount = 5;
+            this.tableLayoutPanel4.ColumnCount = 6;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel4.Controls.Add(this.muteRadio, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.playRadio, 3, 0);
+            this.tableLayoutPanel4.Controls.Add(this.chkMuteAds, 5, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -113,7 +116,7 @@
             this.muteRadio.AutoSize = true;
             this.muteRadio.Dock = System.Windows.Forms.DockStyle.Right;
             this.muteRadio.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.muteRadio.Location = new System.Drawing.Point(113, 3);
+            this.muteRadio.Location = new System.Drawing.Point(48, 3);
             this.muteRadio.Name = "muteRadio";
             this.muteRadio.Size = new System.Drawing.Size(97, 19);
             this.muteRadio.TabIndex = 0;
@@ -125,7 +128,7 @@
             // 
             this.playRadio.AutoSize = true;
             this.playRadio.Dock = System.Windows.Forms.DockStyle.Left;
-            this.playRadio.Location = new System.Drawing.Point(236, 3);
+            this.playRadio.Location = new System.Drawing.Point(171, 3);
             this.playRadio.Name = "playRadio";
             this.playRadio.Size = new System.Drawing.Size(86, 19);
             this.playRadio.TabIndex = 1;
@@ -358,6 +361,19 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(459, 311);
             this.tableLayoutPanel2.TabIndex = 8;
             // 
+            // chkMuteAds
+            // 
+            this.chkMuteAds.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.chkMuteAds.AutoSize = true;
+            this.chkMuteAds.Checked = true;
+            this.chkMuteAds.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkMuteAds.Location = new System.Drawing.Point(338, 4);
+            this.chkMuteAds.Name = "chkMuteAds";
+            this.chkMuteAds.Size = new System.Drawing.Size(106, 17);
+            this.chkMuteAds.TabIndex = 2;
+            this.chkMuteAds.Text = "Mute Spotify Ads";
+            this.chkMuteAds.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -424,6 +440,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem startStopToolStripMenuItem;
+        private System.Windows.Forms.CheckBox chkMuteAds;
     }
 }
 
