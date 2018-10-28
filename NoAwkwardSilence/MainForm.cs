@@ -19,7 +19,8 @@ namespace NoAwkwardSilence
         private int awkwardMeter_ = 0;
         private System.Drawing.Color colorDisabled_ = System.Drawing.Color.Silver;
         private System.Drawing.Color colorEnabled_ = System.Drawing.Color.White;
-        public bool isRunning = false;
+        private bool isRunning = false;
+        private bool isOn = false;
 
         public MainForm()
         {
@@ -120,15 +121,18 @@ namespace NoAwkwardSilence
 
                 for (int i = 0; (i < spotifyProcessX.Length); i++)
                 {
-                    if (spotifyProcessX[i].MainWindowTitle.Length > 0)
+                    if (spotifyProcessX[i].MainWindowTitle.Length > 0 && spotifyProcessX[i].MainWindowTitle != "Spotify")
                     {
-                        int test1 = spotifyProcessX[i].MainWindowTitle.IndexOf("-");
                         if (spotifyProcessX[i].MainWindowTitle.IndexOf("-") == -1)
                         {
                             audio_.Mute(defaultSession_, true);
                             return;
                         }
 
+                    }
+                    else if(isOn == true)
+                    {
+                        audio_.Mute(defaultSession_, false);
                     }
 
                 }
@@ -142,6 +146,8 @@ namespace NoAwkwardSilence
                 {
                     logTextBox.Text = "Audio: None" + Environment.NewLine + "Sound source: ON\n";
                     notifyIcon1.Text = "No Awkward Silence - Running (ON)";
+                    isOn = true;
+
                     if (muteRadio.Checked)
                     {
                         audio_.Mute(defaultSession_, false);
@@ -164,6 +170,7 @@ namespace NoAwkwardSilence
             {
                 logTextBox.Text = "Audio: Detected" + Environment.NewLine + "Sound source: OFF\n";
                 notifyIcon1.Text = "No Awkward Silence - Running (OFF)";
+                isOn = false;
                 if (muteRadio.Checked)
                 {
                     audio_.Mute(defaultSession_, true);
