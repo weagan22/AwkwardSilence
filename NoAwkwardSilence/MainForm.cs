@@ -126,6 +126,7 @@ namespace NoAwkwardSilence
                         if (spotifyProcessX[i].MainWindowTitle.IndexOf("-") == -1)
                         {
                             audio_.Mute(defaultSession_, true);
+                            return;
                         }
 
                     }
