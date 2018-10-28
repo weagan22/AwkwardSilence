@@ -32,29 +32,40 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.playRadio = new System.Windows.Forms.RadioButton();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.muteRadio = new System.Windows.Forms.RadioButton();
+            this.playRadio = new System.Windows.Forms.RadioButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.delayTrackBar = new System.Windows.Forms.TrackBar();
             this.toleranceTrackBar = new System.Windows.Forms.TrackBar();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
-            this.sourceListBox = new System.Windows.Forms.CheckedListBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.updateBtn = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.sourceListBox = new System.Windows.Forms.CheckedListBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.startBtn = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.logTextBox = new System.Windows.Forms.TextBox();
-            this.stopBtn = new System.Windows.Forms.Button();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.delayTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toleranceTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -64,57 +75,66 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.groupBox1.Controls.Add(this.playRadio);
-            this.groupBox1.Controls.Add(this.muteRadio);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.tableLayoutPanel4);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(455, 33);
+            this.groupBox1.Size = new System.Drawing.Size(453, 44);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Mode";
             // 
-            // playRadio
+            // tableLayoutPanel4
             // 
-            this.playRadio.AutoSize = true;
-            this.playRadio.Location = new System.Drawing.Point(228, 12);
-            this.playRadio.Name = "playRadio";
-            this.playRadio.Size = new System.Drawing.Size(109, 17);
-            this.playRadio.TabIndex = 1;
-            this.playRadio.Text = "Pause / Unpause";
-            this.playRadio.UseVisualStyleBackColor = true;
+            this.tableLayoutPanel4.ColumnCount = 5;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
+            this.tableLayoutPanel4.Controls.Add(this.muteRadio, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.playRadio, 3, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(447, 25);
+            this.tableLayoutPanel4.TabIndex = 2;
             // 
             // muteRadio
             // 
             this.muteRadio.AutoSize = true;
             this.muteRadio.Checked = true;
-            this.muteRadio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.muteRadio.Location = new System.Drawing.Point(74, 12);
+            this.muteRadio.Dock = System.Windows.Forms.DockStyle.Right;
+            this.muteRadio.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.muteRadio.Location = new System.Drawing.Point(113, 3);
             this.muteRadio.Name = "muteRadio";
-            this.muteRadio.Size = new System.Drawing.Size(97, 17);
+            this.muteRadio.Size = new System.Drawing.Size(97, 19);
             this.muteRadio.TabIndex = 0;
             this.muteRadio.TabStop = true;
             this.muteRadio.Text = "Mute / Unmute";
             this.muteRadio.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // playRadio
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Sound sources";
-            this.toolTip1.SetToolTip(this.label1, "Mute/Unmute this sound source. If it does not show up in the list, try playing so" +
-        "me sound from the source and press refresh");
+            this.playRadio.AutoSize = true;
+            this.playRadio.Dock = System.Windows.Forms.DockStyle.Left;
+            this.playRadio.Location = new System.Drawing.Point(236, 3);
+            this.playRadio.Name = "playRadio";
+            this.playRadio.Size = new System.Drawing.Size(109, 19);
+            this.playRadio.TabIndex = 1;
+            this.playRadio.Text = "Pause / Unpause";
+            this.playRadio.UseVisualStyleBackColor = true;
             // 
             // delayTrackBar
             // 
-            this.delayTrackBar.Location = new System.Drawing.Point(133, 7);
+            this.delayTrackBar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.delayTrackBar.Location = new System.Drawing.Point(3, 16);
             this.delayTrackBar.Name = "delayTrackBar";
-            this.delayTrackBar.Size = new System.Drawing.Size(160, 45);
+            this.delayTrackBar.Size = new System.Drawing.Size(289, 35);
             this.delayTrackBar.TabIndex = 7;
             this.delayTrackBar.Tag = "";
             this.toolTip1.SetToolTip(this.delayTrackBar, "The delay between the sound going quiet and unmuting the sound source");
@@ -122,9 +142,10 @@
             // 
             // toleranceTrackBar
             // 
-            this.toleranceTrackBar.Location = new System.Drawing.Point(133, 58);
+            this.toleranceTrackBar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toleranceTrackBar.Location = new System.Drawing.Point(3, 16);
             this.toleranceTrackBar.Name = "toleranceTrackBar";
-            this.toleranceTrackBar.Size = new System.Drawing.Size(160, 45);
+            this.toleranceTrackBar.Size = new System.Drawing.Size(289, 35);
             this.toleranceTrackBar.TabIndex = 6;
             this.toleranceTrackBar.TickFrequency = 2;
             this.toolTip1.SetToolTip(this.toleranceTrackBar, "Tweak this slider to make the program tolerate more ambient noise (i.e. higher vo" +
@@ -134,152 +155,211 @@
             // 
             this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer.IsSplitterFixed = true;
-            this.splitContainer.Location = new System.Drawing.Point(0, 33);
+            this.splitContainer.Location = new System.Drawing.Point(3, 53);
             this.splitContainer.Name = "splitContainer";
             // 
             // splitContainer.Panel1
             // 
-            this.splitContainer.Panel1.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.splitContainer.Panel1.Controls.Add(this.label1);
-            this.splitContainer.Panel1.Controls.Add(this.sourceListBox);
-            this.splitContainer.Panel1.Controls.Add(this.updateBtn);
+            this.splitContainer.Panel1.BackColor = System.Drawing.Color.White;
+            this.splitContainer.Panel1.Controls.Add(this.tableLayoutPanel3);
             this.splitContainer.Panel1.ForeColor = System.Drawing.SystemColors.HighlightText;
             // 
             // splitContainer.Panel2
             // 
-            this.splitContainer.Panel2.BackColor = System.Drawing.Color.IndianRed;
-            this.splitContainer.Panel2.Controls.Add(this.label4);
-            this.splitContainer.Panel2.Controls.Add(this.label3);
-            this.splitContainer.Panel2.Controls.Add(this.label2);
-            this.splitContainer.Panel2.Controls.Add(this.delayTrackBar);
-            this.splitContainer.Panel2.Controls.Add(this.toleranceTrackBar);
-            this.splitContainer.Panel2.Controls.Add(this.startBtn);
-            this.splitContainer.Panel2.Controls.Add(this.logTextBox);
-            this.splitContainer.Panel2.Controls.Add(this.stopBtn);
+            this.splitContainer.Panel2.BackColor = System.Drawing.Color.Silver;
+            this.splitContainer.Panel2.Controls.Add(this.tableLayoutPanel1);
             this.splitContainer.Panel2.Enabled = false;
             this.splitContainer.Panel2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.splitContainer.Size = new System.Drawing.Size(455, 265);
-            this.splitContainer.SplitterDistance = 149;
+            this.splitContainer.Size = new System.Drawing.Size(453, 255);
+            this.splitContainer.SplitterDistance = 148;
             this.splitContainer.TabIndex = 6;
             // 
-            // sourceListBox
+            // tableLayoutPanel3
             // 
-            this.sourceListBox.FormattingEnabled = true;
-            this.sourceListBox.Location = new System.Drawing.Point(12, 34);
-            this.sourceListBox.Name = "sourceListBox";
-            this.sourceListBox.Size = new System.Drawing.Size(120, 169);
-            this.sourceListBox.TabIndex = 3;
-            this.sourceListBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.sourceListBox_ItemCheck);
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.updateBtn, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.groupBox5, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(148, 255);
+            this.tableLayoutPanel3.TabIndex = 5;
             // 
             // updateBtn
             // 
             this.updateBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.updateBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.updateBtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.updateBtn.Location = new System.Drawing.Point(32, 209);
+            this.updateBtn.Location = new System.Drawing.Point(3, 208);
             this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(69, 23);
+            this.updateBtn.Size = new System.Drawing.Size(142, 44);
             this.updateBtn.TabIndex = 0;
             this.updateBtn.Text = "Refresh";
             this.updateBtn.UseVisualStyleBackColor = false;
             this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
-            // label4
+            // groupBox5
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label4.Location = new System.Drawing.Point(23, 7);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Unmute delay (s)";
+            this.groupBox5.Controls.Add(this.sourceListBox);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox5.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.groupBox5.Location = new System.Drawing.Point(3, 3);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(142, 199);
+            this.groupBox5.TabIndex = 1;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Sound Sources";
             // 
-            // label3
+            // sourceListBox
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 58);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Sound tolerance";
+            this.sourceListBox.CheckOnClick = true;
+            this.sourceListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sourceListBox.FormattingEnabled = true;
+            this.sourceListBox.Location = new System.Drawing.Point(3, 16);
+            this.sourceListBox.Name = "sourceListBox";
+            this.sourceListBox.Size = new System.Drawing.Size(136, 180);
+            this.sourceListBox.TabIndex = 3;
+            this.sourceListBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.sourceListBox_ItemCheck);
             // 
-            // label2
+            // tableLayoutPanel1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 106);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Debug log";
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.startBtn, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox3, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox4, 0, 2);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(301, 255);
+            this.tableLayoutPanel1.TabIndex = 11;
             // 
             // startBtn
             // 
             this.startBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.startBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.startBtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.startBtn.Location = new System.Drawing.Point(132, 209);
+            this.startBtn.Location = new System.Drawing.Point(3, 208);
             this.startBtn.Name = "startBtn";
-            this.startBtn.Size = new System.Drawing.Size(75, 23);
+            this.startBtn.Size = new System.Drawing.Size(295, 44);
             this.startBtn.TabIndex = 2;
-            this.startBtn.Text = "Start";
+            this.startBtn.Text = "Start/Stop";
             this.startBtn.UseVisualStyleBackColor = false;
             this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.delayTrackBar);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(3, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(295, 54);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Unmute Delay (s)";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.toleranceTrackBar);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox3.Location = new System.Drawing.Point(3, 63);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(295, 54);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Sound Tolerance";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.logTextBox);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox4.Location = new System.Drawing.Point(3, 123);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(295, 79);
+            this.groupBox4.TabIndex = 2;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Log";
             // 
             // logTextBox
             // 
             this.logTextBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.logTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.logTextBox.Enabled = false;
             this.logTextBox.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.logTextBox.Location = new System.Drawing.Point(132, 106);
+            this.logTextBox.Location = new System.Drawing.Point(3, 16);
             this.logTextBox.Multiline = true;
             this.logTextBox.Name = "logTextBox";
             this.logTextBox.ReadOnly = true;
-            this.logTextBox.Size = new System.Drawing.Size(161, 81);
+            this.logTextBox.Size = new System.Drawing.Size(289, 60);
             this.logTextBox.TabIndex = 5;
-            // 
-            // stopBtn
-            // 
-            this.stopBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.stopBtn.Enabled = false;
-            this.stopBtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.stopBtn.Location = new System.Drawing.Point(218, 209);
-            this.stopBtn.Name = "stopBtn";
-            this.stopBtn.Size = new System.Drawing.Size(75, 23);
-            this.stopBtn.TabIndex = 4;
-            this.stopBtn.Text = "Stop";
-            this.stopBtn.UseVisualStyleBackColor = false;
-            this.stopBtn.Click += new System.EventHandler(this.stopBtn_Click);
             // 
             // notifyIcon1
             // 
+            this.notifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.notifyIcon1.BalloonTipText = "AwkwardSilence was minimized to the system tray!";
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Text = "AwkwardSilence";
+            this.notifyIcon1.Text = "No Awkward Silence";
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.splitContainer, 0, 1);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(459, 311);
+            this.tableLayoutPanel2.TabIndex = 8;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(455, 298);
-            this.Controls.Add(this.splitContainer);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(459, 311);
+            this.Controls.Add(this.tableLayoutPanel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(475, 350);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AwkwardSilence - BETA";
+            this.Text = "No Awkward Silence";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.delayTrackBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toleranceTrackBar)).EndInit();
             this.splitContainer.Panel1.ResumeLayout(false);
-            this.splitContainer.Panel1.PerformLayout();
             this.splitContainer.Panel2.ResumeLayout(false);
-            this.splitContainer.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
             this.splitContainer.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -290,20 +370,23 @@
         private System.Windows.Forms.Button startBtn;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.CheckedListBox sourceListBox;
-        private System.Windows.Forms.Button stopBtn;
         private System.Windows.Forms.TextBox logTextBox;
         private System.Windows.Forms.SplitContainer splitContainer;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton playRadio;
         private System.Windows.Forms.RadioButton muteRadio;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TrackBar delayTrackBar;
         private System.Windows.Forms.TrackBar toleranceTrackBar;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }
 }
 
