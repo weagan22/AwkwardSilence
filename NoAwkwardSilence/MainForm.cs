@@ -26,7 +26,9 @@ namespace NoAwkwardSilence
             InitializeComponent();
             delayTrackBar.Value = Properties.Settings.Default.Delay;
             toleranceTrackBar.Value = Properties.Settings.Default.Tolerance;
-
+            muteRadio.Checked = Properties.Settings.Default.Mode;
+            playRadio.Checked = !Properties.Settings.Default.Mode;
+            updateBtn_Click(null, EventArgs.Empty);
         }
 
 
@@ -91,11 +93,13 @@ namespace NoAwkwardSilence
 
             if (e.NewValue == CheckState.Unchecked && sourceListBox.CheckedItems.Count <= 1)
             {
+                startStopToolStripMenuItem.Enabled = false;
                 splitContainer.Panel2.Enabled = false;
                 splitContainer.Panel2.BackColor = colorDisabled_;
             }
             else
             {
+                startStopToolStripMenuItem.Enabled = true;
                 splitContainer.Panel2.Enabled = true;
                 splitContainer.Panel2.BackColor = colorEnabled_;
             }
@@ -152,6 +156,7 @@ namespace NoAwkwardSilence
             audio_.Mute(defaultSession_, false);
             Properties.Settings.Default.Delay = delayTrackBar.Value;
             Properties.Settings.Default.Tolerance = toleranceTrackBar.Value;
+            Properties.Settings.Default.Mode = muteRadio.Checked;
             Properties.Settings.Default.Save();
         }
 
@@ -178,6 +183,25 @@ namespace NoAwkwardSilence
         }
 
 
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (System.Windows.Forms.Application.MessageLoop)
+            {
+                // WinForms app
+                System.Windows.Forms.Application.Exit();
+            }
+            else
+            {
+                // Console app
+                System.Environment.Exit(1);
+            }
+        }
+
+        private void startStopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            startBtn_Click(null, EventArgs.Empty);
+        }
     }
 
 }

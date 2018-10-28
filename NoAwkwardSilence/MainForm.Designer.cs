@@ -51,6 +51,9 @@
             this.logTextBox = new System.Windows.Forms.TextBox();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.startStopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.delayTrackBar)).BeginInit();
@@ -66,6 +69,7 @@
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -107,15 +111,14 @@
             // muteRadio
             // 
             this.muteRadio.AutoSize = true;
-            this.muteRadio.Checked = true;
             this.muteRadio.Dock = System.Windows.Forms.DockStyle.Right;
             this.muteRadio.ForeColor = System.Drawing.SystemColors.Desktop;
             this.muteRadio.Location = new System.Drawing.Point(113, 3);
             this.muteRadio.Name = "muteRadio";
             this.muteRadio.Size = new System.Drawing.Size(97, 19);
             this.muteRadio.TabIndex = 0;
-            this.muteRadio.TabStop = true;
             this.muteRadio.Text = "Mute / Unmute";
+            this.toolTip1.SetToolTip(this.muteRadio, "Mute / Unmute selected source.");
             this.muteRadio.UseVisualStyleBackColor = true;
             // 
             // playRadio
@@ -124,9 +127,10 @@
             this.playRadio.Dock = System.Windows.Forms.DockStyle.Left;
             this.playRadio.Location = new System.Drawing.Point(236, 3);
             this.playRadio.Name = "playRadio";
-            this.playRadio.Size = new System.Drawing.Size(109, 19);
+            this.playRadio.Size = new System.Drawing.Size(86, 19);
             this.playRadio.TabIndex = 1;
-            this.playRadio.Text = "Pause / Unpause";
+            this.playRadio.Text = "Pause / Play";
+            this.toolTip1.SetToolTip(this.playRadio, "Pause / Play selected source");
             this.playRadio.UseVisualStyleBackColor = true;
             // 
             // delayTrackBar
@@ -199,6 +203,7 @@
             this.updateBtn.Size = new System.Drawing.Size(142, 44);
             this.updateBtn.TabIndex = 0;
             this.updateBtn.Text = "Refresh";
+            this.toolTip1.SetToolTip(this.updateBtn, "Refreshes the list of audio sources.");
             this.updateBtn.UseVisualStyleBackColor = false;
             this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
@@ -254,6 +259,7 @@
             this.startBtn.Size = new System.Drawing.Size(295, 44);
             this.startBtn.TabIndex = 2;
             this.startBtn.Text = "Start/Stop";
+            this.toolTip1.SetToolTip(this.startBtn, "Starts or stops audio toggle.");
             this.startBtn.UseVisualStyleBackColor = false;
             this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
             // 
@@ -266,7 +272,7 @@
             this.groupBox2.Size = new System.Drawing.Size(295, 54);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Unmute Delay (s)";
+            this.groupBox2.Text = "Delay (s)";
             // 
             // groupBox3
             // 
@@ -302,11 +308,13 @@
             this.logTextBox.ReadOnly = true;
             this.logTextBox.Size = new System.Drawing.Size(289, 60);
             this.logTextBox.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.logTextBox, "Log");
             // 
             // notifyIcon1
             // 
             this.notifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.notifyIcon1.BalloonTipText = "AwkwardSilence was minimized to the system tray!";
+            this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Text = "No Awkward Silence";
             this.notifyIcon1.Visible = true;
@@ -327,6 +335,29 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(459, 311);
             this.tableLayoutPanel2.TabIndex = 8;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.startStopToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(128, 48);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // startStopToolStripMenuItem
+            // 
+            this.startStopToolStripMenuItem.Enabled = false;
+            this.startStopToolStripMenuItem.Name = "startStopToolStripMenuItem";
+            this.startStopToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.startStopToolStripMenuItem.Text = "Start/Stop";
+            this.startStopToolStripMenuItem.Click += new System.EventHandler(this.startStopToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,10 +366,12 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(475, 350);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "No Awkward Silence";
+            this.toolTip1.SetToolTip(this, "No Awkward Silence is running.");
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
             this.groupBox1.ResumeLayout(false);
@@ -360,6 +393,7 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -387,6 +421,9 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem startStopToolStripMenuItem;
     }
 }
 
