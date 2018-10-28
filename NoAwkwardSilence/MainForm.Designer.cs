@@ -38,22 +38,22 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.delayTrackBar = new System.Windows.Forms.TrackBar();
             this.toleranceTrackBar = new System.Windows.Forms.TrackBar();
+            this.updateBtn = new System.Windows.Forms.Button();
+            this.startBtn = new System.Windows.Forms.Button();
+            this.logTextBox = new System.Windows.Forms.TextBox();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.updateBtn = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.sourceListBox = new System.Windows.Forms.CheckedListBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.startBtn = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.logTextBox = new System.Windows.Forms.TextBox();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startStopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.delayTrackBar)).BeginInit();
@@ -68,13 +68,13 @@
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
             // 
-            this.timer1.Interval = 500;
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // groupBox1
@@ -155,6 +155,48 @@
             this.toolTip1.SetToolTip(this.toleranceTrackBar, "Tweak this slider to make the program tolerate more ambient noise (i.e. higher vo" +
         "lume is required to trigger the sound source)");
             // 
+            // updateBtn
+            // 
+            this.updateBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.updateBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.updateBtn.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.updateBtn.Location = new System.Drawing.Point(3, 208);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.Size = new System.Drawing.Size(142, 44);
+            this.updateBtn.TabIndex = 0;
+            this.updateBtn.Text = "Refresh";
+            this.toolTip1.SetToolTip(this.updateBtn, "Refreshes the list of audio sources.");
+            this.updateBtn.UseVisualStyleBackColor = false;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
+            // 
+            // startBtn
+            // 
+            this.startBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.startBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.startBtn.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.startBtn.Location = new System.Drawing.Point(3, 208);
+            this.startBtn.Name = "startBtn";
+            this.startBtn.Size = new System.Drawing.Size(295, 44);
+            this.startBtn.TabIndex = 2;
+            this.startBtn.Text = "Start/Stop";
+            this.toolTip1.SetToolTip(this.startBtn, "Starts or stops audio toggle.");
+            this.startBtn.UseVisualStyleBackColor = false;
+            this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
+            // 
+            // logTextBox
+            // 
+            this.logTextBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.logTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.logTextBox.Enabled = false;
+            this.logTextBox.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.logTextBox.Location = new System.Drawing.Point(3, 16);
+            this.logTextBox.Multiline = true;
+            this.logTextBox.Name = "logTextBox";
+            this.logTextBox.ReadOnly = true;
+            this.logTextBox.Size = new System.Drawing.Size(289, 60);
+            this.logTextBox.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.logTextBox, "Log");
+            // 
             // splitContainer
             // 
             this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -192,20 +234,6 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(148, 255);
             this.tableLayoutPanel3.TabIndex = 5;
-            // 
-            // updateBtn
-            // 
-            this.updateBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.updateBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.updateBtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.updateBtn.Location = new System.Drawing.Point(3, 208);
-            this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(142, 44);
-            this.updateBtn.TabIndex = 0;
-            this.updateBtn.Text = "Refresh";
-            this.toolTip1.SetToolTip(this.updateBtn, "Refreshes the list of audio sources.");
-            this.updateBtn.UseVisualStyleBackColor = false;
-            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // groupBox5
             // 
@@ -249,20 +277,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(301, 255);
             this.tableLayoutPanel1.TabIndex = 11;
             // 
-            // startBtn
-            // 
-            this.startBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.startBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.startBtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.startBtn.Location = new System.Drawing.Point(3, 208);
-            this.startBtn.Name = "startBtn";
-            this.startBtn.Size = new System.Drawing.Size(295, 44);
-            this.startBtn.TabIndex = 2;
-            this.startBtn.Text = "Start/Stop";
-            this.toolTip1.SetToolTip(this.startBtn, "Starts or stops audio toggle.");
-            this.startBtn.UseVisualStyleBackColor = false;
-            this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.delayTrackBar);
@@ -283,7 +297,7 @@
             this.groupBox3.Size = new System.Drawing.Size(295, 54);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Sound Tolerance";
+            this.groupBox3.Text = "Sound Tolerance (units)";
             // 
             // groupBox4
             // 
@@ -296,20 +310,6 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Log";
             // 
-            // logTextBox
-            // 
-            this.logTextBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.logTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.logTextBox.Enabled = false;
-            this.logTextBox.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.logTextBox.Location = new System.Drawing.Point(3, 16);
-            this.logTextBox.Multiline = true;
-            this.logTextBox.Name = "logTextBox";
-            this.logTextBox.ReadOnly = true;
-            this.logTextBox.Size = new System.Drawing.Size(289, 60);
-            this.logTextBox.TabIndex = 5;
-            this.toolTip1.SetToolTip(this.logTextBox, "Log");
-            // 
             // notifyIcon1
             // 
             this.notifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
@@ -319,6 +319,29 @@
             this.notifyIcon1.Text = "No Awkward Silence";
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.startStopToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(128, 48);
+            // 
+            // startStopToolStripMenuItem
+            // 
+            this.startStopToolStripMenuItem.Enabled = false;
+            this.startStopToolStripMenuItem.Name = "startStopToolStripMenuItem";
+            this.startStopToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.startStopToolStripMenuItem.Text = "Start/Stop";
+            this.startStopToolStripMenuItem.Click += new System.EventHandler(this.startStopToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -334,29 +357,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(459, 311);
             this.tableLayoutPanel2.TabIndex = 8;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.startStopToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(128, 48);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // startStopToolStripMenuItem
-            // 
-            this.startStopToolStripMenuItem.Enabled = false;
-            this.startStopToolStripMenuItem.Name = "startStopToolStripMenuItem";
-            this.startStopToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.startStopToolStripMenuItem.Text = "Start/Stop";
-            this.startStopToolStripMenuItem.Click += new System.EventHandler(this.startStopToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -392,8 +392,8 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -61,7 +61,9 @@ namespace NoAwkwardSilence
                         {
                             defaultSession_ = session;
                             timer1.Start();
-                            logTextBox.Text = "Start";
+                            logTextBox.Text = "Starting...";
+                            notifyIcon1.Text = "No Awkward Silence - Running";
+                            this.Text = "No Awkward Silence - Running";
                             splitContainer.Panel1.Enabled = false;
                             splitContainer.Panel1.BackColor = colorDisabled_;
                             break;
@@ -73,7 +75,9 @@ namespace NoAwkwardSilence
             {
                 isRunning = false;
                 timer1.Stop();
-                logTextBox.Text = "Stop";
+                logTextBox.Text = "Stopped";
+                notifyIcon1.Text = "No Awkward Silence - Stopped";
+                this.Text = "No Awkward Silence - Stopped";
                 audio_.Mute(defaultSession_, false);
                 splitContainer.Panel1.Enabled = true;
                 splitContainer.Panel1.BackColor = colorEnabled_;
@@ -110,11 +114,12 @@ namespace NoAwkwardSilence
         {
             if (audio_.IsAwkward(defaultSession_, toleranceTrackBar.Value))
             {
-                logTextBox.Text = "Audio: None " + Environment.NewLine + "Sound source: Queued\n";
-                if (awkwardMeter_ > (delayTrackBar.Value*2))
+               
+                logTextBox.Text = "Audio: None " + Environment.NewLine + "Sound source: Queued\n" + Environment.NewLine + "Countdown: " + (delayTrackBar.Value - awkwardMeter_);
+                if (awkwardMeter_ > (delayTrackBar.Value))
                 {
                     logTextBox.Text = "Audio: None" + Environment.NewLine + "Sound source: ON\n";
-                    notifyIcon1.Text = "No Awkward Silence - (ON)";
+                    notifyIcon1.Text = "No Awkward Silence - Running (ON)";
                     if (muteRadio.Checked)
                     {
                         audio_.Mute(defaultSession_, false);
@@ -136,7 +141,7 @@ namespace NoAwkwardSilence
             else
             {
                 logTextBox.Text = "Audio: Detected" + Environment.NewLine + "Sound source: OFF\n";
-                notifyIcon1.Text = "No Awkward Silence - (OFF)";
+                notifyIcon1.Text = "No Awkward Silence - Running (OFF)";
                 if (muteRadio.Checked)
                 {
                     audio_.Mute(defaultSession_, true);
