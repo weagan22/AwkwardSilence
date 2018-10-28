@@ -107,7 +107,7 @@ namespace NoAwkwardSilence
             if (audio_.IsAwkward(defaultSession_, toleranceTrackBar.Value))
             {
                 logTextBox.Text = "Audio: None " + Environment.NewLine + "Sound source: Queued\n";
-                if (awkwardMeter_ > delayTrackBar.Value*4)
+                if (awkwardMeter_ > (delayTrackBar.Value*2))
                 {
                     logTextBox.Text = "Audio: None" + Environment.NewLine + "Sound source: ON\n";
                     notifyIcon1.Text = "No Awkward Silence - (ON)";
