@@ -31,6 +31,10 @@ namespace NoAwkwardSilence
             playRadio.Checked = !Properties.Settings.Default.Mode;
             chkMuteAds.Checked = Properties.Settings.Default.Mute;
             updateBtn_Click(null, EventArgs.Empty);
+            if (sourceListBox.CheckedItems.Count==1)
+            {
+                startBtn_Click(null, EventArgs.Empty);
+            }
         }
 
 
@@ -44,6 +48,10 @@ namespace NoAwkwardSilence
             foreach (var session in sessionList_)
             {
                 sourceListBox.Items.Add(session.name);
+                if (session.name == "Spotify" && sourceListBox.CheckedItems.Count == 0)
+                {
+                    sourceListBox.SetItemChecked(sourceListBox.Items.Count-1, true);
+                }
             }
         }
 
@@ -239,6 +247,7 @@ namespace NoAwkwardSilence
         {
             startBtn_Click(null, EventArgs.Empty);
         }
+
     }
 
 }

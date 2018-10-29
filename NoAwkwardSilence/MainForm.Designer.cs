@@ -35,6 +35,7 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.muteRadio = new System.Windows.Forms.RadioButton();
             this.playRadio = new System.Windows.Forms.RadioButton();
+            this.chkMuteAds = new System.Windows.Forms.CheckBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.delayTrackBar = new System.Windows.Forms.TrackBar();
             this.toleranceTrackBar = new System.Windows.Forms.TrackBar();
@@ -54,7 +55,6 @@
             this.startStopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.chkMuteAds = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.delayTrackBar)).BeginInit();
@@ -116,7 +116,7 @@
             this.muteRadio.AutoSize = true;
             this.muteRadio.Dock = System.Windows.Forms.DockStyle.Right;
             this.muteRadio.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.muteRadio.Location = new System.Drawing.Point(48, 3);
+            this.muteRadio.Location = new System.Drawing.Point(49, 3);
             this.muteRadio.Name = "muteRadio";
             this.muteRadio.Size = new System.Drawing.Size(97, 19);
             this.muteRadio.TabIndex = 0;
@@ -127,14 +127,29 @@
             // playRadio
             // 
             this.playRadio.AutoSize = true;
+            this.playRadio.Checked = true;
             this.playRadio.Dock = System.Windows.Forms.DockStyle.Left;
-            this.playRadio.Location = new System.Drawing.Point(171, 3);
+            this.playRadio.Location = new System.Drawing.Point(172, 3);
             this.playRadio.Name = "playRadio";
             this.playRadio.Size = new System.Drawing.Size(86, 19);
             this.playRadio.TabIndex = 1;
+            this.playRadio.TabStop = true;
             this.playRadio.Text = "Pause / Play";
             this.toolTip1.SetToolTip(this.playRadio, "Pause / Play selected source");
             this.playRadio.UseVisualStyleBackColor = true;
+            // 
+            // chkMuteAds
+            // 
+            this.chkMuteAds.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.chkMuteAds.AutoSize = true;
+            this.chkMuteAds.Checked = true;
+            this.chkMuteAds.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkMuteAds.Location = new System.Drawing.Point(338, 4);
+            this.chkMuteAds.Name = "chkMuteAds";
+            this.chkMuteAds.Size = new System.Drawing.Size(106, 17);
+            this.chkMuteAds.TabIndex = 2;
+            this.chkMuteAds.Text = "Mute Spotify Ads";
+            this.chkMuteAds.UseVisualStyleBackColor = true;
             // 
             // delayTrackBar
             // 
@@ -360,19 +375,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(459, 311);
             this.tableLayoutPanel2.TabIndex = 8;
-            // 
-            // chkMuteAds
-            // 
-            this.chkMuteAds.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.chkMuteAds.AutoSize = true;
-            this.chkMuteAds.Checked = true;
-            this.chkMuteAds.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkMuteAds.Location = new System.Drawing.Point(338, 4);
-            this.chkMuteAds.Name = "chkMuteAds";
-            this.chkMuteAds.Size = new System.Drawing.Size(106, 17);
-            this.chkMuteAds.TabIndex = 2;
-            this.chkMuteAds.Text = "Mute Spotify Ads";
-            this.chkMuteAds.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
