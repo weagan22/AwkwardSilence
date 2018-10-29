@@ -114,7 +114,8 @@ namespace NoAwkwardSilence
         // Check for sound changes every second
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (chkMuteAds.Checked)
+            //Check if there is an ad playing and mute if there is.
+            if (chkMuteAds.Checked && defaultSession_.name == "Spotify")
             {
                 Process[] spotifyProcessX;
                 spotifyProcessX = Process.GetProcessesByName("Spotify");
@@ -128,16 +129,16 @@ namespace NoAwkwardSilence
                             audio_.Mute(defaultSession_, true);
                             return;
                         }
+                        else if(isOn == true)
+                        {
+                            audio_.Mute(defaultSession_, false);
+                        }
 
                     }
-                    else if(isOn == true)
-                    {
-                        audio_.Mute(defaultSession_, false);
-                    }
-
                 }
             }
 
+            //Check for awkward silence
             if (audio_.IsAwkward(defaultSession_, toleranceTrackBar.Value))
             {
                
