@@ -182,7 +182,7 @@
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(142, 44);
             this.updateBtn.TabIndex = 0;
-            this.updateBtn.Text = "Refresh";
+            this.updateBtn.Text = "Refresh List";
             this.toolTip1.SetToolTip(this.updateBtn, "Refreshes the list of audio sources.");
             this.updateBtn.UseVisualStyleBackColor = false;
             this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);

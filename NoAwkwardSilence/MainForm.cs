@@ -61,6 +61,8 @@ namespace NoAwkwardSilence
             if (isRunning == false) // Start monitoring the selected sound session
             {
                 isRunning = true;
+                startBtn.BackColor = System.Drawing.Color.LightCoral;
+                startBtn.Text = "Stop";
 
                 if (sourceListBox.CheckedItems.Count > 0)
                 {
@@ -84,6 +86,9 @@ namespace NoAwkwardSilence
             else  // Stop monintoring sound session
             {
                 isRunning = false;
+                startBtn.BackColor = SystemColors.ButtonFace;
+                startBtn.Text = "Start";
+
                 timer1.Stop();
                 logTextBox.Text = "Stopped";
                 notifyIcon1.Text = "No Awkward Silence - Stopped";
@@ -135,6 +140,7 @@ namespace NoAwkwardSilence
                         if (spotifyProcessX[i].MainWindowTitle.IndexOf("-") == -1)
                         {
                             audio_.Mute(defaultSession_, true);
+                            logTextBox.Text = "Spotify Muted: Advertisement";
                             return;
                         }
                         else if(isOn == true)
@@ -156,7 +162,7 @@ namespace NoAwkwardSilence
                     logTextBox.Text = "Audio: None" + Environment.NewLine + "Sound source: ON\n";
                     notifyIcon1.Text = "No Awkward Silence - Running (ON)";
                     isOn = true;
-
+                    
                     if (muteRadio.Checked)
                     {
                         audio_.Mute(defaultSession_, false);
