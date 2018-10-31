@@ -67,7 +67,7 @@ namespace NoAwkwardSilence
                 {
                     foreach (var session in sessionEnumerator)
                     {
-                        if(session.GroupingParam != defaultSession.groupingParam && session.DisplayName.IndexOf("SystemRoot")==-1) //Ignores system sounds and sounds from default session.
+                        if(session.GroupingParam != defaultSession.groupingParam && session.DisplayName.IndexOf("SystemRoot")==-1 && session.DisplayName!= "") //Ignores system sounds and sounds from default session.
                         {
                             using (var audioMeterInformation = session.QueryInterface<AudioMeterInformation>())
                             {
