@@ -56,6 +56,7 @@
             this.startStopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.delayTrackBar)).BeginInit();
@@ -391,6 +392,10 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(459, 321);
             this.tableLayoutPanel2.TabIndex = 8;
             // 
+            // timer2
+            // 
+            this.timer2.Interval = 500;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -459,6 +464,7 @@
         private System.Windows.Forms.ToolStripMenuItem startStopToolStripMenuItem;
         private System.Windows.Forms.CheckBox chkMuteAds;
         private System.Windows.Forms.RadioButton noneRadio;
+        public System.Windows.Forms.Timer timer2;
     }
 }
 

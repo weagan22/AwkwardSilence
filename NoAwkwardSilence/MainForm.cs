@@ -152,7 +152,6 @@ namespace NoAwkwardSilence
                         {
                             audio_.Mute(defaultSession_, false);
                         }
-
                     }
                 }
             }
@@ -170,6 +169,8 @@ namespace NoAwkwardSilence
                     logTextBox.Text = "Autoplay Function: None";
                     notifyIcon1.Text = "No Awkward Silence - Running";
                 }
+
+                awkwardMeter_ = 0;
             }
             else
             {

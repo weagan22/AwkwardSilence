@@ -144,6 +144,14 @@ namespace NoAwkwardSilence
                                 {
                                     return true;
                                 }
+
+                                //Wait and check to see if it is playing again in case player is between songs
+                                System.Threading.Thread.Sleep(50);
+
+                                if (audioMeterInformation.PeakValue > 0.0001)
+                                {
+                                    return true;
+                                }
                             }
                         }
                     }
