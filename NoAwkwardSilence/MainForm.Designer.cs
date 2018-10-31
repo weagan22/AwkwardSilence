@@ -55,6 +55,7 @@
             this.startStopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.noneRadio = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.delayTrackBar)).BeginInit();
@@ -86,29 +87,32 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Desktop;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(453, 44);
+            this.groupBox1.Size = new System.Drawing.Size(453, 64);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Mode";
             // 
             // tableLayoutPanel4
             // 
-            this.tableLayoutPanel4.ColumnCount = 6;
+            this.tableLayoutPanel4.ColumnCount = 8;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00062F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00062F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00062F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.99813F));
             this.tableLayoutPanel4.Controls.Add(this.muteRadio, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.playRadio, 3, 0);
-            this.tableLayoutPanel4.Controls.Add(this.chkMuteAds, 5, 0);
+            this.tableLayoutPanel4.Controls.Add(this.chkMuteAds, 7, 0);
+            this.tableLayoutPanel4.Controls.Add(this.noneRadio, 5, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(447, 25);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(447, 45);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // muteRadio
@@ -116,9 +120,9 @@
             this.muteRadio.AutoSize = true;
             this.muteRadio.Dock = System.Windows.Forms.DockStyle.Right;
             this.muteRadio.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.muteRadio.Location = new System.Drawing.Point(49, 3);
+            this.muteRadio.Location = new System.Drawing.Point(23, 3);
             this.muteRadio.Name = "muteRadio";
-            this.muteRadio.Size = new System.Drawing.Size(97, 19);
+            this.muteRadio.Size = new System.Drawing.Size(85, 39);
             this.muteRadio.TabIndex = 0;
             this.muteRadio.Text = "Mute / Unmute";
             this.toolTip1.SetToolTip(this.muteRadio, "Mute / Unmute selected source.");
@@ -129,9 +133,9 @@
             this.playRadio.AutoSize = true;
             this.playRadio.Checked = true;
             this.playRadio.Dock = System.Windows.Forms.DockStyle.Left;
-            this.playRadio.Location = new System.Drawing.Point(172, 3);
+            this.playRadio.Location = new System.Drawing.Point(135, 3);
             this.playRadio.Name = "playRadio";
-            this.playRadio.Size = new System.Drawing.Size(86, 19);
+            this.playRadio.Size = new System.Drawing.Size(85, 39);
             this.playRadio.TabIndex = 1;
             this.playRadio.TabStop = true;
             this.playRadio.Text = "Pause / Play";
@@ -140,13 +144,13 @@
             // 
             // chkMuteAds
             // 
-            this.chkMuteAds.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.chkMuteAds.AutoSize = true;
             this.chkMuteAds.Checked = true;
             this.chkMuteAds.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkMuteAds.Location = new System.Drawing.Point(338, 4);
+            this.chkMuteAds.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chkMuteAds.Location = new System.Drawing.Point(357, 3);
             this.chkMuteAds.Name = "chkMuteAds";
-            this.chkMuteAds.Size = new System.Drawing.Size(106, 17);
+            this.chkMuteAds.Size = new System.Drawing.Size(87, 39);
             this.chkMuteAds.TabIndex = 2;
             this.chkMuteAds.Text = "Mute Spotify Ads";
             this.chkMuteAds.UseVisualStyleBackColor = true;
@@ -178,7 +182,7 @@
             this.updateBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.updateBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.updateBtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.updateBtn.Location = new System.Drawing.Point(3, 208);
+            this.updateBtn.Location = new System.Drawing.Point(3, 188);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(142, 44);
             this.updateBtn.TabIndex = 0;
@@ -192,7 +196,7 @@
             this.startBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.startBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.startBtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.startBtn.Location = new System.Drawing.Point(3, 208);
+            this.startBtn.Location = new System.Drawing.Point(3, 188);
             this.startBtn.Name = "startBtn";
             this.startBtn.Size = new System.Drawing.Size(295, 44);
             this.startBtn.TabIndex = 2;
@@ -211,7 +215,7 @@
             this.logTextBox.Multiline = true;
             this.logTextBox.Name = "logTextBox";
             this.logTextBox.ReadOnly = true;
-            this.logTextBox.Size = new System.Drawing.Size(289, 60);
+            this.logTextBox.Size = new System.Drawing.Size(289, 40);
             this.logTextBox.TabIndex = 5;
             this.toolTip1.SetToolTip(this.logTextBox, "Log");
             // 
@@ -219,7 +223,7 @@
             // 
             this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer.IsSplitterFixed = true;
-            this.splitContainer.Location = new System.Drawing.Point(3, 53);
+            this.splitContainer.Location = new System.Drawing.Point(3, 73);
             this.splitContainer.Name = "splitContainer";
             // 
             // splitContainer.Panel1
@@ -234,7 +238,7 @@
             this.splitContainer.Panel2.Controls.Add(this.tableLayoutPanel1);
             this.splitContainer.Panel2.Enabled = false;
             this.splitContainer.Panel2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.splitContainer.Size = new System.Drawing.Size(453, 255);
+            this.splitContainer.Size = new System.Drawing.Size(453, 235);
             this.splitContainer.SplitterDistance = 148;
             this.splitContainer.TabIndex = 6;
             // 
@@ -250,7 +254,7 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(148, 255);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(148, 235);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
             // groupBox5
@@ -260,7 +264,7 @@
             this.groupBox5.ForeColor = System.Drawing.SystemColors.Desktop;
             this.groupBox5.Location = new System.Drawing.Point(3, 3);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(142, 199);
+            this.groupBox5.Size = new System.Drawing.Size(142, 179);
             this.groupBox5.TabIndex = 1;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Sound Sources";
@@ -272,7 +276,7 @@
             this.sourceListBox.FormattingEnabled = true;
             this.sourceListBox.Location = new System.Drawing.Point(3, 16);
             this.sourceListBox.Name = "sourceListBox";
-            this.sourceListBox.Size = new System.Drawing.Size(136, 180);
+            this.sourceListBox.Size = new System.Drawing.Size(136, 160);
             this.sourceListBox.TabIndex = 3;
             this.sourceListBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.sourceListBox_ItemCheck);
             // 
@@ -292,7 +296,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(301, 255);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(301, 235);
             this.tableLayoutPanel1.TabIndex = 11;
             // 
             // groupBox2
@@ -323,7 +327,7 @@
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(3, 123);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(295, 79);
+            this.groupBox4.Size = new System.Drawing.Size(295, 59);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Log";
@@ -370,10 +374,22 @@
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(459, 311);
             this.tableLayoutPanel2.TabIndex = 8;
+            // 
+            // noneRadio
+            // 
+            this.noneRadio.AutoSize = true;
+            this.noneRadio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.noneRadio.Location = new System.Drawing.Point(246, 3);
+            this.noneRadio.Name = "noneRadio";
+            this.noneRadio.Size = new System.Drawing.Size(85, 39);
+            this.noneRadio.TabIndex = 3;
+            this.noneRadio.TabStop = true;
+            this.noneRadio.Text = "None";
+            this.noneRadio.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -442,6 +458,7 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem startStopToolStripMenuItem;
         private System.Windows.Forms.CheckBox chkMuteAds;
+        private System.Windows.Forms.RadioButton noneRadio;
     }
 }
 

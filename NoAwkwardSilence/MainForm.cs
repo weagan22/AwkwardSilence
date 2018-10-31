@@ -27,9 +27,10 @@ namespace NoAwkwardSilence
             InitializeComponent();
             delayTrackBar.Value = Properties.Settings.Default.Delay;
             toleranceTrackBar.Value = Properties.Settings.Default.Tolerance;
-            muteRadio.Checked = Properties.Settings.Default.Mode;
-            playRadio.Checked = !Properties.Settings.Default.Mode;
-            chkMuteAds.Checked = Properties.Settings.Default.Mute;
+            muteRadio.Checked = Properties.Settings.Default.muteRadio;
+            playRadio.Checked = Properties.Settings.Default.playRadio;
+            noneRadio.Checked = Properties.Settings.Default.noneRadio;
+            chkMuteAds.Checked = Properties.Settings.Default.muteAds;
             updateBtn_Click(null, EventArgs.Empty);
             if (sourceListBox.CheckedItems.Count==1)
             {
@@ -147,7 +148,7 @@ namespace NoAwkwardSilence
                             logTextBox.Text = "Spotify Muted: Advertisement";
                             return;
                         }
-                        else if(isOn == true)
+                        else if (isOn == true)
                         {
                             audio_.Mute(defaultSession_, false);
                         }
@@ -156,52 +157,68 @@ namespace NoAwkwardSilence
                 }
             }
 
-            //Check for awkward silence
-            if (audio_.IsAwkward(defaultSession_, toleranceTrackBar.Value))
+            //Do no autoplay function if none radio is checked
+            if (noneRadio.Checked)
             {
-               
-                logTextBox.Text = "Audio: None " + Environment.NewLine + "Sound source: Queued\n" + Environment.NewLine + "Countdown: " + (delayTrackBar.Value - awkwardMeter_);
-                if (awkwardMeter_ > (delayTrackBar.Value))
+                if (chkMuteAds.Checked)
                 {
-                    logTextBox.Text = "Audio: None" + Environment.NewLine + "Sound source: ON\n";
-                    notifyIcon1.Text = "No Awkward Silence - Running (ON)";
-                    isOn = true;
-                    
-                    if (muteRadio.Checked)
-                    {
-                        audio_.Mute(defaultSession_, false);
-                        if (!audio_.SessionPlaying(defaultSession_))
-                        {
-                            audio_.TogglePause(defaultSession_);
-                        }
-                        
-                    }
-                    else if (!audio_.SessionPlaying(defaultSession_))
-                    {
-                        audio_.TogglePause(defaultSession_);
-                        audio_.Mute(defaultSession_, false);
-                    }
+                    logTextBox.Text = "Autoplay Function: None" + Environment.NewLine + "Monitoring for Ads";
+                    notifyIcon1.Text = "No Awkward Silence - Running";
                 }
-                awkwardMeter_++;
-
+                else
+                {
+                    logTextBox.Text = "Autoplay Function: None";
+                    notifyIcon1.Text = "No Awkward Silence - Running";
+                }
             }
             else
             {
-                logTextBox.Text = "Audio: Detected" + Environment.NewLine + "Sound source: OFF\n";
-                notifyIcon1.Text = "No Awkward Silence - Running (OFF)";
-                isOn = false;
-                if (muteRadio.Checked)
+                //Check for awkward silence
+                if (audio_.IsAwkward(defaultSession_, toleranceTrackBar.Value))
                 {
-                    audio_.Mute(defaultSession_, true);
-                }
-                else if (audio_.SessionPlaying(defaultSession_))
-                {
-                    audio_.TogglePause(defaultSession_);
-                }
-                awkwardMeter_ = 0;
-            }
 
+                    logTextBox.Text = "Audio: None " + Environment.NewLine + "Sound source: Queued\n" + Environment.NewLine + "Countdown: " + (delayTrackBar.Value - awkwardMeter_);
+                    if (awkwardMeter_ > (delayTrackBar.Value))
+                    {
+                        logTextBox.Text = "Audio: None" + Environment.NewLine + "Sound source: ON\n";
+                        notifyIcon1.Text = "No Awkward Silence - Running (ON)";
+                        isOn = true;
+
+                        if (muteRadio.Checked)
+                        {
+                            audio_.Mute(defaultSession_, false);
+                            if (!audio_.SessionPlaying(defaultSession_))
+                            {
+                                audio_.TogglePause(defaultSession_);
+                            }
+
+                        }
+                        else if (!audio_.SessionPlaying(defaultSession_))
+                        {
+                            audio_.TogglePause(defaultSession_);
+                            audio_.Mute(defaultSession_, false);
+                        }
                     }
+                    awkwardMeter_++;
+
+                }
+                else
+                {
+                    logTextBox.Text = "Audio: Detected" + Environment.NewLine + "Sound source: OFF\n";
+                    notifyIcon1.Text = "No Awkward Silence - Running (OFF)";
+                    isOn = false;
+                    if (muteRadio.Checked)
+                    {
+                        audio_.Mute(defaultSession_, true);
+                    }
+                    else if (audio_.SessionPlaying(defaultSession_))
+                    {
+                        audio_.TogglePause(defaultSession_);
+                    }
+                    awkwardMeter_ = 0;
+                }
+            }
+        }
 
 
         // Save settings as form closes
@@ -210,8 +227,10 @@ namespace NoAwkwardSilence
             audio_.Mute(defaultSession_, false);
             Properties.Settings.Default.Delay = delayTrackBar.Value;
             Properties.Settings.Default.Tolerance = toleranceTrackBar.Value;
-            Properties.Settings.Default.Mode = muteRadio.Checked;
-            Properties.Settings.Default.Mute = chkMuteAds.Checked;
+            Properties.Settings.Default.muteRadio = muteRadio.Checked;
+            Properties.Settings.Default.playRadio = playRadio.Checked;
+            Properties.Settings.Default.noneRadio = noneRadio.Checked;
+            Properties.Settings.Default.muteAds = chkMuteAds.Checked;
             Properties.Settings.Default.Save();
         }
 
