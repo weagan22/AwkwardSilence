@@ -16,7 +16,7 @@ namespace NoAwkwardSilence
         private Audio audio_ = new Audio();
         private List<AudioSession> sessionList_;
         private AudioSession defaultSession_;
-        private int awkwardMeter_ = 0;
+        private int awkwardMeter_ = 20;
         private System.Drawing.Color colorDisabled_ = System.Drawing.Color.Silver;
         private System.Drawing.Color colorEnabled_ = System.Drawing.Color.White;
         private bool isRunning = false;
@@ -47,7 +47,11 @@ namespace NoAwkwardSilence
             sessionList_ = audio_.GetAudioSessionList();
             foreach (var session in sessionList_)
             {
-                sourceListBox.Items.Add(session.name);
+                if (session.name != "Idle") //Skips adding system sounds as a default sounds source.
+                {
+                    sourceListBox.Items.Add(session.name);
+                }
+                
                 if (session.name == "Spotify" && sourceListBox.CheckedItems.Count == 0)
                 {
                     sourceListBox.SetItemChecked(sourceListBox.Items.Count-1, true);
