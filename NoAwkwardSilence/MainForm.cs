@@ -220,7 +220,7 @@ namespace NoAwkwardSilence
             if (FormWindowState.Minimized == this.WindowState)
             {
                 notifyIcon1.Visible = true;
-                notifyIcon1.ShowBalloonTip(500);
+                notifyIcon1.ShowBalloonTip(50);
                 this.Hide();
             }
             else if (FormWindowState.Normal == this.WindowState)
