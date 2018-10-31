@@ -67,7 +67,8 @@ namespace NoAwkwardSilence
                 {
                     foreach (var session in sessionEnumerator)
                     {
-                        if(session.GroupingParam != defaultSession.groupingParam)
+                        var test1 = session.DisplayName;
+                        if (session.GroupingParam != defaultSession.groupingParam) // && session.DisName !=)
                         {
                             using (var audioMeterInformation = session.QueryInterface<AudioMeterInformation>())
                             {
