@@ -49,25 +49,49 @@ namespace NoAwkwardSilence.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool Mode {
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool muteRadio {
             get {
-                return ((bool)(this["Mode"]));
+                return ((bool)(this["muteRadio"]));
             }
             set {
-                this["Mode"] = value;
+                this["muteRadio"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool Mute {
+        public bool muteAds {
             get {
-                return ((bool)(this["Mute"]));
+                return ((bool)(this["muteAds"]));
             }
             set {
-                this["Mute"] = value;
+                this["muteAds"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool playRadio {
+            get {
+                return ((bool)(this["playRadio"]));
+            }
+            set {
+                this["playRadio"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool noneRadio {
+            get {
+                return ((bool)(this["noneRadio"]));
+            }
+            set {
+                this["noneRadio"] = value;
             }
         }
     }

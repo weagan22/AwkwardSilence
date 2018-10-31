@@ -67,8 +67,7 @@ namespace NoAwkwardSilence
                 {
                     foreach (var session in sessionEnumerator)
                     {
-                        var test1 = session.DisplayName;
-                        if (session.GroupingParam != defaultSession.groupingParam) // && session.DisName !=)
+                        if(session.GroupingParam != defaultSession.groupingParam && session.DisplayName.IndexOf("SystemRoot")==-1) //Ignores system sounds and sounds from default session.
                         {
                             using (var audioMeterInformation = session.QueryInterface<AudioMeterInformation>())
                             {
@@ -142,6 +141,14 @@ namespace NoAwkwardSilence
                             {
                                 // Sometimes very very small but not 0 even when not playing
                                 if(audioMeterInformation.PeakValue > 0.0001)
+                                {
+                                    return true;
+                                }
+
+                                //Wait and check to see if it is playing again in case player is between songs
+                                System.Threading.Thread.Sleep(50);
+
+                                if (audioMeterInformation.PeakValue > 0.0001)
                                 {
                                     return true;
                                 }
