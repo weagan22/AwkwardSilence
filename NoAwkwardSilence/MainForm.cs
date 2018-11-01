@@ -153,6 +153,16 @@ namespace NoAwkwardSilence
                             audio_.Mute(defaultSession_, false);
                         }
                     }
+                    else if (spotifyProcessX[i].MainWindowTitle.Length > 0 && spotifyProcessX[i].MainWindowTitle == "Spotify")
+                    {
+                        audio_.Mute(defaultSession_, true);
+                        if (!audio_.SessionPlaying(defaultSession_))
+                        {
+                            audio_.TogglePause(defaultSession_);
+                        }
+                        logTextBox.Text = "Spotify Muted: Advertisement";
+                        return;
+                    }
                 }
             }
 
@@ -278,6 +288,21 @@ namespace NoAwkwardSilence
             startBtn_Click(null, EventArgs.Empty);
         }
 
+        private void muteAdsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(muteAdsToolStripMenuItem.Checked)
+            {
+                chkMuteAds.Checked= true;
+            }
+        }
+
+        private void chkMuteAds_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkMuteAds.Checked)
+            {
+                muteAdsToolStripMenuItem.Checked = true;
+            }
+        }
     }
 
 }

@@ -57,6 +57,11 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.modeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.muteUnmuteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.playPauseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.noneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.muteAdsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.delayTrackBar)).BeginInit();
@@ -155,6 +160,7 @@
             this.chkMuteAds.TabIndex = 2;
             this.chkMuteAds.Text = "Mute Spotify Ads";
             this.chkMuteAds.UseVisualStyleBackColor = true;
+            this.chkMuteAds.CheckedChanged += new System.EventHandler(this.chkMuteAds_CheckedChanged);
             // 
             // noneRadio
             // 
@@ -357,10 +363,12 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.muteAdsToolStripMenuItem,
+            this.modeToolStripMenuItem,
             this.startStopToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(128, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(128, 92);
             // 
             // startStopToolStripMenuItem
             // 
@@ -395,6 +403,44 @@
             // timer2
             // 
             this.timer2.Interval = 500;
+            // 
+            // modeToolStripMenuItem
+            // 
+            this.modeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.muteUnmuteToolStripMenuItem,
+            this.playPauseToolStripMenuItem,
+            this.noneToolStripMenuItem});
+            this.modeToolStripMenuItem.Name = "modeToolStripMenuItem";
+            this.modeToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.modeToolStripMenuItem.Text = "Mode";
+            this.modeToolStripMenuItem.Visible = false;
+            // 
+            // muteUnmuteToolStripMenuItem
+            // 
+            this.muteUnmuteToolStripMenuItem.Name = "muteUnmuteToolStripMenuItem";
+            this.muteUnmuteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.muteUnmuteToolStripMenuItem.Text = "Mute/Unmute";
+            // 
+            // playPauseToolStripMenuItem
+            // 
+            this.playPauseToolStripMenuItem.Name = "playPauseToolStripMenuItem";
+            this.playPauseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.playPauseToolStripMenuItem.Text = "Play/Pause";
+            // 
+            // noneToolStripMenuItem
+            // 
+            this.noneToolStripMenuItem.Name = "noneToolStripMenuItem";
+            this.noneToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.noneToolStripMenuItem.Text = "None";
+            // 
+            // muteAdsToolStripMenuItem
+            // 
+            this.muteAdsToolStripMenuItem.CheckOnClick = true;
+            this.muteAdsToolStripMenuItem.Name = "muteAdsToolStripMenuItem";
+            this.muteAdsToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.muteAdsToolStripMenuItem.Text = "Mute Ads";
+            this.muteAdsToolStripMenuItem.Visible = false;
+            this.muteAdsToolStripMenuItem.Click += new System.EventHandler(this.muteAdsToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -465,6 +511,11 @@
         private System.Windows.Forms.CheckBox chkMuteAds;
         private System.Windows.Forms.RadioButton noneRadio;
         public System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.ToolStripMenuItem muteAdsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem muteUnmuteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem playPauseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem noneToolStripMenuItem;
     }
 }
 
