@@ -53,15 +53,15 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.startStopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.muteAdsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.muteUnmuteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playPauseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.noneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.muteAdsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.startStopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.delayTrackBar)).BeginInit();
@@ -370,6 +370,44 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(128, 92);
             // 
+            // muteAdsToolStripMenuItem
+            // 
+            this.muteAdsToolStripMenuItem.CheckOnClick = true;
+            this.muteAdsToolStripMenuItem.Name = "muteAdsToolStripMenuItem";
+            this.muteAdsToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.muteAdsToolStripMenuItem.Text = "Mute Ads";
+            this.muteAdsToolStripMenuItem.Visible = false;
+            this.muteAdsToolStripMenuItem.Click += new System.EventHandler(this.muteAdsToolStripMenuItem_Click);
+            // 
+            // modeToolStripMenuItem
+            // 
+            this.modeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.muteUnmuteToolStripMenuItem,
+            this.playPauseToolStripMenuItem,
+            this.noneToolStripMenuItem});
+            this.modeToolStripMenuItem.Name = "modeToolStripMenuItem";
+            this.modeToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.modeToolStripMenuItem.Text = "Mode";
+            this.modeToolStripMenuItem.Visible = false;
+            // 
+            // muteUnmuteToolStripMenuItem
+            // 
+            this.muteUnmuteToolStripMenuItem.Name = "muteUnmuteToolStripMenuItem";
+            this.muteUnmuteToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.muteUnmuteToolStripMenuItem.Text = "Mute/Unmute";
+            // 
+            // playPauseToolStripMenuItem
+            // 
+            this.playPauseToolStripMenuItem.Name = "playPauseToolStripMenuItem";
+            this.playPauseToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.playPauseToolStripMenuItem.Text = "Play/Pause";
+            // 
+            // noneToolStripMenuItem
+            // 
+            this.noneToolStripMenuItem.Name = "noneToolStripMenuItem";
+            this.noneToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.noneToolStripMenuItem.Text = "None";
+            // 
             // startStopToolStripMenuItem
             // 
             this.startStopToolStripMenuItem.Enabled = false;
@@ -402,45 +440,7 @@
             // 
             // timer2
             // 
-            this.timer2.Interval = 500;
-            // 
-            // modeToolStripMenuItem
-            // 
-            this.modeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.muteUnmuteToolStripMenuItem,
-            this.playPauseToolStripMenuItem,
-            this.noneToolStripMenuItem});
-            this.modeToolStripMenuItem.Name = "modeToolStripMenuItem";
-            this.modeToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.modeToolStripMenuItem.Text = "Mode";
-            this.modeToolStripMenuItem.Visible = false;
-            // 
-            // muteUnmuteToolStripMenuItem
-            // 
-            this.muteUnmuteToolStripMenuItem.Name = "muteUnmuteToolStripMenuItem";
-            this.muteUnmuteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.muteUnmuteToolStripMenuItem.Text = "Mute/Unmute";
-            // 
-            // playPauseToolStripMenuItem
-            // 
-            this.playPauseToolStripMenuItem.Name = "playPauseToolStripMenuItem";
-            this.playPauseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.playPauseToolStripMenuItem.Text = "Play/Pause";
-            // 
-            // noneToolStripMenuItem
-            // 
-            this.noneToolStripMenuItem.Name = "noneToolStripMenuItem";
-            this.noneToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.noneToolStripMenuItem.Text = "None";
-            // 
-            // muteAdsToolStripMenuItem
-            // 
-            this.muteAdsToolStripMenuItem.CheckOnClick = true;
-            this.muteAdsToolStripMenuItem.Name = "muteAdsToolStripMenuItem";
-            this.muteAdsToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.muteAdsToolStripMenuItem.Text = "Mute Ads";
-            this.muteAdsToolStripMenuItem.Visible = false;
-            this.muteAdsToolStripMenuItem.Click += new System.EventHandler(this.muteAdsToolStripMenuItem_Click);
+            this.timer2.Interval = 1000;
             // 
             // MainForm
             // 

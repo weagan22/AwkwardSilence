@@ -132,6 +132,7 @@ namespace NoAwkwardSilence
         // Check for sound changes every second
         private void timer1_Tick(object sender, EventArgs e)
         {
+            bool isSpotify = false;
             //Check if there is an ad playing and mute if there is.
             if (chkMuteAds.Checked && defaultSession_.name == "Spotify")
             {
@@ -156,14 +157,15 @@ namespace NoAwkwardSilence
                     else if (spotifyProcessX[i].MainWindowTitle.Length > 0 && spotifyProcessX[i].MainWindowTitle == "Spotify")
                     {
                         audio_.Mute(defaultSession_, true);
-                        if (!audio_.SessionPlaying(defaultSession_))
-                        {
-                            audio_.TogglePause(defaultSession_);
-                        }
+
                         logTextBox.Text = "Spotify Muted: Advertisement";
-                        return;
+                        isSpotify = true;
                     }
                 }
+            }
+            else
+            {
+                isSpotify = false;
             }
 
             //Do no autoplay function if none radio is checked
@@ -197,7 +199,11 @@ namespace NoAwkwardSilence
 
                         if (muteRadio.Checked)
                         {
+                            if(!isSpotify)
+                            {
                             audio_.Mute(defaultSession_, false);
+                            }
+                            
                             if (!audio_.SessionPlaying(defaultSession_))
                             {
                                 audio_.TogglePause(defaultSession_);
@@ -207,7 +213,10 @@ namespace NoAwkwardSilence
                         else if (!audio_.SessionPlaying(defaultSession_))
                         {
                             audio_.TogglePause(defaultSession_);
-                            audio_.Mute(defaultSession_, false);
+                            if (!isSpotify)
+                            {
+                                audio_.Mute(defaultSession_, false);
+                            }
                         }
                     }
                     awkwardMeter_++;
